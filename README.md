@@ -2,30 +2,30 @@ cmps112-project
 ===============
 
 euler.cpp - was compiled on unix platform with g++
-  > > g++ euler.cpp
+  > $ g++ euler.cpp
   
-  > > ./a.out 
+  > $ ./a.out 
 
 euler.hs - works as a haskell module in ghci
-  > > ghci euler
+  > $ ghci euler
   
   > ghci> :set +s
   
   > ghci> euler2
   
-  ghci> euler3
+  > ghci> euler3
   
-  ghci> euler5
+  > ghci> euler5
   
-  ghci> euler9
+  > ghci> euler9
   
-  ghci> euler31
+  > ghci> euler31
   
-  ghci> euler44
+  > ghci> euler44
   
-  ghci> euler52
+  > ghci> euler52
 
 euler.js - run with node.js
-  > node euler.js
+  > $ node euler.js
 
 cmps112-project
