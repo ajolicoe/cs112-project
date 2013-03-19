@@ -20,6 +20,7 @@ int lcm (int, int);
 int countWays (int, int);
 bool isPermutationOf (vector <int>, vector<int>);
 bool isPenta (int);
+bool isPrime (int);
 int fibonacci (int);
 
 int euler31Total;
@@ -28,6 +29,7 @@ int euler2 ();
 long long euler3 ();
 int euler5 ();
 int euler9 ();
+long long euler10 ();
 int euler31 ();
 int euler44 ();
 int euler52 ();
@@ -138,6 +140,27 @@ int euler9 () {
 	return t;
 }
 
+bool isPrime (int num) {
+  for (int i = 2; i <= sqrt(num); i++) {
+	if (num % i == 0) return false;
+  }
+  return true;
+}
+
+long long euler10 () {
+	clock_t begin = clock();
+	long long sum = 0;
+	for (int i = 2; i <= 2000000; i++) {
+		if (isPrime(i)) sum += i;
+	}
+	clock_t end = clock();
+	double time = double(end - begin) / CLOCKS_PER_SEC;
+	cout << "Problem 10: " << sum << endl;
+	cout << "time elapsed : " << time << " s" << endl;
+	return sum;
+}
+
+
 /*increment counter for each time we reach the wanted sum of 200 pence.
  *@param int a - size of coin denomination vector
  *@param int b - wanted sum = 200 pence (2 pounds) 
@@ -247,7 +270,6 @@ int euler52() {
 		six.clear();
 		int temp = 2*i;
 		while (temp > 0) {
-			cout << "inserting " << temp%10 << " into two" << endl;
 			two.insert(two.begin(),temp%10);
 			temp/=10;
 		}
@@ -296,6 +318,7 @@ int main (int argc, char **argv) {
 	euler3();
 	euler5();
 	euler9();
+	euler10();
 	euler31();
 	euler44();
 	euler52();

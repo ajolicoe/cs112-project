@@ -95,6 +95,28 @@ function euler9 () {
 	console.log("time elapsed : " + time);
 }
 
+/*determine if number is prime*/
+function isPrime(num) {
+	for (var i = 2; i <= Math.sqrt(num); i++) {
+		if (num % i === 0) return false;
+	}
+	return true;
+}
+
+/*add all prime numbers less than 2000000*/
+function euler10 () {
+	var begin = new Date().getTime();
+	var sum = 0;
+	for (var i = 2; i <= 2000000; i++) {
+		if (isPrime(i)) sum += i;
+	}
+	var end = new Date().getTime();
+	var time = end - begin;
+	console.log("Problem 10: " + sum);
+	console.log("time elapsed : " + time);
+	return sum;
+}
+
 /*@return number of ways 2 pounds can be made out of
  * the british coin denominations */
 GLOBAL.euler31Total = 0;
@@ -155,12 +177,14 @@ function euler44 () {
 	console.log("time elapsed : " + time);
 }
 
+/*determine if numbers X and Y are permutations of eachother*/
 function sameDigits(x, y) {
 	var xDigits = x.toString().split('').sort().join(',');
 	var yDigits = y.toString().split('').sort().join(',');
 	return (xDigits == yDigits);
 }
 
+/*find the number whose multiples of [2..6] are permutations of eachother */
 function euler52() {
 	var begin = new Date().getTime();
 	var res = 0;
@@ -175,17 +199,20 @@ function euler52() {
 	console.log("time elapsed : " + time);
 }
 
+/*determine if all multiples are permutations of eachother*/
 function allSameDigits(a) {
 	return sameDigits(a,2*a) && sameDigits(2*a,3*a)
 		&& sameDigits(3*a,4*a) && sameDigits(4*a,5*a)
 		&& sameDigits(5*a,6*a);
 }
 
+/*print out problem answers*/
 function runProblems () {
 	euler2();
 	euler3();
 	euler5();
 	euler9();
+	euler10();
 	euler31();
 	euler44();
 	euler52();

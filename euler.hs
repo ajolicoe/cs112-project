@@ -38,6 +38,8 @@ triplet s = [ [a,b,c] | n <- [1..floor . sqrt . fromIntegral $ s],
 
 euler9 = product . head . triplet $ 1000
 
+euler10 = sum [x | x <- takeWhile (<2000000) primes]
+
 coins = [1,2,5,10,20,50,100,200] -- coin denominations
 
 countWays	  :: Int -> Int -> Int
