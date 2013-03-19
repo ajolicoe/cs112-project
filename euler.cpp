@@ -140,15 +140,13 @@ int euler9 () {
 	return t;
 }
 
-/*determine if integer is a prime number*/
 bool isPrime (int num) {
-	for (int i = 2; i <= sqrt(num); i++) {
-		if (num % i == 0) return false;
-	}
-	return true;
+  for (int i = 2; i <= sqrt(num); i++) {
+	if (num % i == 0) return false;
+  }
+  return true;
 }
 
-/*sum all prime numbers less than 2000000*/
 long long euler10 () {
 	clock_t begin = clock();
 	long long sum = 0;
@@ -159,6 +157,7 @@ long long euler10 () {
 	double time = double(end - begin) / CLOCKS_PER_SEC;
 	cout << "Problem 10: " << sum << endl;
 	cout << "time elapsed : " << time << " s" << endl;
+	assert(sum = 142913828922);
 	return sum;
 }
 
@@ -212,12 +211,10 @@ int euler31 () {
 	return euler31Total;
 }
 
-/*create pentagonal number*/
 int penta (int x) {
 	return x * (3 * x - 1) / 2; 
 }
 
-/*determine if integer is pentagonal number*/
 bool isPenta (int x) {
 	double pentaX = (sqrt(24*x+1)+1)/6;
 	return fmod(pentaX, 1.0) == 0;
@@ -247,7 +244,6 @@ int euler44 () {
 	return res;
 }
 
-/*determine if two vectors are permutations of eachother*/
 bool isPermutationOf(vector<int> a, vector<int> b) {
 	if (a.size() == b.size()) {
 		sort (a.begin(), a.end());
@@ -257,11 +253,10 @@ bool isPermutationOf(vector<int> a, vector<int> b) {
 	return false;
 }
 
-/*find the number such that its multiples of [2..6] are all
- * permutations of eachother*/
 int euler52() {
 	clock_t begin = clock();
 	int res;
+	vector<int> one;
 	vector<int> two;
 	vector<int> three;
 	vector<int> four;
