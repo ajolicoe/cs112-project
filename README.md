@@ -1,4 +1,4 @@
-cmps112-project
+cs112-project
 ===============
 
 euler.cpp - was compiled on unix platform with g++
